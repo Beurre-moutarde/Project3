@@ -1,8 +1,22 @@
 // Assignment Code
+var characterCount;
+
+//Numbers
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+//Special Characters
+var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "<", ">", "?", "/", ","];
+
+//Letters
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+// Upper Letters
+var uppers = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
 var generateBtn = document.querySelector("#generate");
 
 
-//Validate the user input
+//Ask the user input
 function getPasswordOptions(userNumCharacters) {
     if (isNaN(userNumCharacters)) {
       alert("Please enter a valid number.");
@@ -19,26 +33,22 @@ function getPasswordOptions(userNumCharacters) {
   
   //Get random characters from each chosen character type
   function getRandomElementFromArray(collection) {
-    return collection[Math.floor(Math.random() * collection.length)];
+     collection[Math.floor(Math.random() * collection.length)];
   }
   
   //Function to prompt user for password options
   function generatePassword() {
     var userNumCharacters = prompt(
-      "How many characters do you want your password to contain?"
-    );
+      "How many characters do you want your password to contain?");
     var passwordValid = getPasswordOptions(userNumCharacters);
     if (passwordValid) {
       var hasSpecialCharacters = confirm(
-        "Press OK to confirm special characters."
-      );
+        "Press OK to confirm special characters.");
       var hasNumbers = confirm("Click OK to confirm adding numeric characters.");
       var hasLowerCase = confirm(
-        "Press OK to confirm adding lowercase characters."
-      );
+        "Press OK to confirm adding lowercase characters.");
       var hasUpperCase = confirm(
-        "Press OK to confirm adding uppercase characters."
-      );
+        "Press OK to confirm adding uppercase characters.");
     }
     
     if (
@@ -60,24 +70,25 @@ function getPasswordOptions(userNumCharacters) {
       );
     }
     if (hasNumbers) {
-      chosenChar = chosenChar.concat(numericCharacters);
+      chosenChar = chosenChar.concat(numbers);
       guaranteedChar.push(
-        numericCharacters[Math.floor(Math.random() * numericCharacters.length)]
+        numbers[
+            Math.floor(Math.random() * numbers.length)]
       );
     }
     if (hasLowerCase) {
-      chosenChar = chosenChar.concat(lowerCasedCharacters);
+      chosenChar = chosenChar.concat(letters);
       guaranteedChar.push(
-        lowerCasedCharacters[
-          Math.floor(Math.random() * lowerCasedCharacters.length)
+        letters[
+          Math.floor(Math.random() * letters.length)
         ]
       );
     }
     if (hasUpperCase) {
-      chosenChar = chosenChar.concat(upperCasedCharacters);
+      chosenChar = chosenChar.concat(uppers);
       guaranteedChar.push(
-        upperCasedCharacters[
-          Math.floor(Math.random() * upperCasedCharacters.length)
+        uppers[
+          Math.floor(Math.random() * uppers.length)
         ]
       );
     }
@@ -110,17 +121,3 @@ function writePassword() {
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-var characterCount;
-
-//Numbers
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-//Special Characters
-var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "<", ">", "?", "/", ","];
-
-//Letters
-var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-// Upper Letters
-var uppers = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
