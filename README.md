@@ -31,8 +31,7 @@ THEN the password is either displayed in an alert or written to the page
 
 The following image shows the application functionality: 
 
-Insert screenshot
-
+![Screen Shot 2022-12-08 at 10 01 17 pm (2)](https://user-images.githubusercontent.com/116129687/206430483-e84cffe1-597d-45e6-95c6-a7e5aca04d80.png)
 #### Licence, Review
 
 None
